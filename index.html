@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Yassin Rmichi - Développeur Full Stack | Portfolio Professionnel</title>
     <meta name="description" content="Portfolio professionnel de Yassin Rmichi, développeur full stack spécialisé en Laravel, React et technologies modernes.">
-
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -14,11 +14,11 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href='./css/style.css' rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
@@ -60,7 +60,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section  mt-5">
+    <section id="home" class="hero-section mt-5">
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6 hero-content">
@@ -78,11 +78,10 @@
                             <i class="fas fa-envelope"></i>
                             Me Contacter
                         </a>
-                        <a href='./files/cv.pdf' download class="btn-professional btn-download">
+                        <a href='./files/cv.pdf' download class="btn-professional btn-download"> 
                             <i class="fas fa-download"></i>
                             Télécharger CV
                         </a>
-
                         <a href="#projects" class="btn-professional btn-outline">
                             <i class="fas fa-eye"></i>
                             Voir mes Projets
@@ -104,19 +103,16 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-    <div class="hero-image-wrapper" id="heroWrapper">
-        <img src='./images/avatar1 (1).jfif'
-             alt="Yassin 1" class="hero-avatar active-img" id="heroImg1">
-        <img src='./images/avatar1 (1).jfif'
-             alt="Yassin 2" class="hero-avatar hidden-img" id="heroImg2">
-    </div>
-</div>
-
+                    <div class="hero-image-wrapper" id="heroWrapper">
+                        <img src="./images/avatar1.jfif" 
+                             alt="Yassin Rmichi" class="hero-avatar active-img" id="heroImg1">
+                        <img src="./images/avatar1.jfif" 
+                             alt="Yassin Rmichi Alt" class="hero-avatar hidden-img" id="heroImg2">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- About Section -->
     <section id="about" class="section-padding">
@@ -242,8 +238,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="skill-item animate-on-scroll">
                         <i class="fab fa-figma skill-icon"></i>
@@ -254,35 +248,84 @@
         </div>
     </section>
 
-    <section class="portfolio-projects-section">
-    <div class="portfolio-projects-container">
-        <h2 class="portfolio-section-title">Mes Projets</h2>
-        <div class="portfolio-projects-grid">
-                {{-- <div class="portfolio-project-card">
-                    <div class="carousel" id="carousel-{{ $projet->id }}">
-                        <div class="carousel-track">
-                                <div class="carousel-slide">
-                                    <img src="{{ asset('storage/' . $image->path) }}" alt="Image projet" class="carousel-image">
-                                </div>
+    <!-- Projects Section -->
+    <section id="projects" class="portfolio-projects-section">
+        <div class="portfolio-projects-container">
+            <h2 class="portfolio-section-title">Mes Projets</h2>
+            <div class="portfolio-projects-grid">
+                <!-- Projet Ehsan -->
+                <div class="portfolio-project-card" data-aos="fade-up">
+                    <div class="carousel" id="carousel-ehsan">
+                        <div class="carousel-track" id="carousel-track-ehsan">
+                            <!-- Les slides seront générées dynamiquement -->
                         </div>
-                        <button class="carousel-btn prev" onclick="prevSlide({{ $projet->id }})">&#10094;</button>
-                        <button class="carousel-btn next" onclick="nextSlide({{ $projet->id }})">&#10095;</button>
+                        <div class="carousel-indicators" id="indicators-ehsan"></div>
+                        <button class="carousel-btn prev" onclick="prevSlide('ehsan')" aria-label="Image précédente">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" onclick="nextSlide('ehsan')" aria-label="Image suivante">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
+                    <div class="portfolio-project-content">
+                        <h3 class="portfolio-project-title">Ehsan - Plateforme Associative</h3>
+                        <p class="portfolio-project-desc">
+                            Ehsan est une plateforme web dédiée à la gestion et au suivi des activités associatives et solidaires. 
+                            Ce projet permet aux associations de centraliser leurs actions, gérer les dons, les publications et 
+                            la communication interne, tout en facilitant l'engagement des membres. Grâce à une interface intuitive, 
+                            Ehsan optimise la coordination des efforts caritatifs pour un impact social renforcé.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Bootstrap</span>
+                        </div>
+                        <a href="https://github.com/yassinrmichi/Ehsan.git" target="_blank" class="portfolio-project-btn">
+                            <i class="fas fa-external-link-alt portfolio-btn-icon"></i> 
+                            Github code source
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projet DriveNow -->
+                <div class="portfolio-project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="carousel" id="carousel-drivenow">
+  <div class="carousel-track" id="carousel-track-drivenow">
+    <!-- Les slides seront générées dynamiquement -->
+  </div>
+  <div class="carousel-indicators" id="indicators-drivenow"></div>
+
+  <button class="carousel-btn prev" onclick="prevSlide('drivenow')" aria-label="Image précédente">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="carousel-btn next" onclick="nextSlide('drivenow')" aria-label="Image suivante">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>
 
                     <div class="portfolio-project-content">
-                        <h3 class="portfolio-project-title">{{ $projet->title }}</h3>
-                        <p class="portfolio-project-desc">{{ $projet->description }}</p>
-                        @if($projet->link)
-                            <a href="{{ $projet->link }}" target="_blank" class="portfolio-project-btn">
-                                <i class="fas fa-external-link-alt portfolio-btn-icon"></i> Github
-                            </a>
-                        @endif
+                        <h3 class="portfolio-project-title">DriveNow : Plateforme intelligente de location de voitures</h3>
+                        <p class="portfolio-project-desc">
+                            Application web développée en équipe pour gérer la location de voitures en ligne.
+                            Fonctionnalités : réservation, impression de facture, système de jetons pour réductions, et interface admin pour gestion complète.
+                            🔧 Réalisé avec : PHP, MySQL, HTML, CSS, JavaScript, Bootstrap.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">java script</span>
+                            <span class="tech-badge">php</span>
+                            <span class="tech-badge">MySql</span>
+                            <span class="tech-badge">Bootstrap</span>
+                        </div>
+                        <a href="https://gitlab.com/YassineBellamim/sqlprojectt" target="_blank" class="portfolio-project-btn">
+                            <i class="fas fa-external-link-alt portfolio-btn-icon"></i> 
+                            Gitlab code source
+                        </a>
                     </div>
-                </div> --}}
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -316,8 +359,8 @@
                         <i class="fas fa-phone contact-icon"></i>
                         <h4 class="mb-3">Téléphone</h4>
                         <p class="mb-0">
-                            <a href="tel:+33123456789" class="text-white text-decoration-none">
-                                +212 6 47 10 40 86
+                            <a href="tel:+212647104086" class="text-white text-decoration-none">
+                                +212 6 47 19 40 86
                             </a>
                         </p>
                     </div>
@@ -330,7 +373,7 @@
                         Je suis toujours ouvert aux nouvelles opportunités et projets innovants.
                         Discutons de vos idées et donnons vie à vos projets ensemble !
                     </p>
-                    <a href="mailto:yassin.rmichi@email.com" class="btn-professional btn-primary">
+                    <a href="mailto:rmichiyassin@hotmail.com" class="btn-professional btn-primary">
                         <i class="fas fa-paper-plane"></i>
                         Envoyer un Message
                     </a>
@@ -348,13 +391,13 @@
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="d-flex justify-content-md-end justify-content-center gap-3 mt-3 mt-md-0">
-                        <a href="https://www.linkedin.com/in/yassinrmichi" target="_blank" class="text-decoration-none">
+                        <a href="https://www.linkedin.com/in/yassin-rmichi-0340522b5/" target="_blank" class="text-decoration-none">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="https://github.com/yassinrmichi" target="_blank" class="text-decoration-none">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="mailto:yassin.rmichi@email.com" class="text-decoration-none">
+                        <a href="mailto:rmichiyassin@hotmail.com" class="text-decoration-none">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -363,13 +406,23 @@
         </div>
     </footer>
 
-
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" aria-label="Fermer">&times;</span>
+        <button class="lightbox-btn prev" aria-label="Image précédente">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <img class="lightbox-content" id="lightbox-img" alt="Image agrandie">
+        <button class="lightbox-btn next" aria-label="Image suivante">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src='./js/index.js'></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
